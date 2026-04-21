@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KerjaMY — Sign In</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 font-sans flex items-center justify-center px-4 py-12">
+
+  <div class="w-full max-w-sm space-y-6">
+    <div class="text-center">
+      <a href="01-landing.html" class="inline-flex items-center gap-2 text-2xl font-bold text-blue-600">
+        <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        KerjaMY
+      </a>
+      <p class="mt-2 text-gray-500 text-sm">Malaysia's B40 Hiring Platform</p>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-8">
+      <h1 class="text-xl font-bold text-gray-900">Welcome back</h1>
+      <p class="text-sm text-gray-500 mt-1 mb-6">Sign in to your KerjaMY account</p>
+
+      <form class="space-y-4" onsubmit="handleSubmit(event)">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+          <input type="email" placeholder="you@email.com" autocomplete="email" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <input type="password" placeholder="Your password" autocomplete="current-password" class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div id="errorBox" class="hidden bg-red-50 border border-red-200 rounded-lg px-4 py-3 text-sm text-red-700">Invalid email or password. Please try again.</div>
+        <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition text-sm">Sign in</button>
+      </form>
+
+      <p class="mt-5 text-center text-sm text-gray-500">New here? <a href="02-register.html" class="font-semibold text-blue-600 hover:underline ml-1">Create a free account</a></p>
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-xs text-amber-700 text-center">
+      <strong>Mockup only.</strong> Click Sign in to go to the upload screen.
+    </div>
+  </div>
+
+  <script>
+    function handleSubmit(e) { e.preventDefault(); window.location.href = '04-upload.html' }
+  </script>
+
+  <div class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-full px-4 py-2 flex gap-3 shadow-xl">
+    <span class="text-gray-400">Screens:</span>
+    <a href="01-landing.html" class="hover:text-blue-400">Landing</a>
+    <a href="02-register.html" class="hover:text-blue-400">Register</a>
+    <a href="03-login.html" class="text-blue-400 font-semibold">Login</a>
+    <a href="04-upload.html" class="hover:text-blue-400">Upload</a>
+    <a href="05-review.html" class="hover:text-blue-400">Review</a>
+    <a href="06-complete.html" class="hover:text-blue-400">Complete</a>
+    <a href="07-profile.html" class="hover:text-blue-400">Profile</a>
+    <a href="08-activity.html" class="hover:text-blue-400">Activity</a>
+  </div>
+</body>
+</html>
