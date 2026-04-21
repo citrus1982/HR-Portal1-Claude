@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KerjaMY — Review Extracted Fields</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-50 font-sans">
+  <nav class="sticky top-0 z-50 border-b bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto flex h-16 items-center justify-between px-6">
+      <a href="01-landing.html" class="flex items-center gap-2 text-xl font-bold text-blue-600">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        KerjaMY
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="07-profile.html" class="text-sm text-gray-600 hover:text-gray-900">My Profile</a>
+        <a href="08-activity.html" class="text-sm text-gray-600 hover:text-gray-900">Activity</a>
+        <button class="text-sm text-gray-400 hover:text-gray-600">Sign out</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-2xl mx-auto px-4 py-10">
+    <div class="mb-8">
+      <div class="flex items-center gap-2 text-sm mb-3 flex-wrap">
+        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold">✓</span>
+        <span class="text-gray-400">Upload CV</span>
+        <svg class="h-4 w-4 text-gray-300 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-white text-xs font-bold">2</span>
+        <span class="font-semibold text-gray-900">Review fields</span>
+        <svg class="h-4 w-4 text-gray-300 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-gray-200 text-gray-500 text-xs">3</span>
+        <span class="text-gray-400">Complete profile</span>
+      </div>
+      <h1 class="text-2xl font-bold text-gray-900">Review extracted information</h1>
+      <p class="text-gray-500 mt-1">We've read your CV. Check each field below — edit anything that looks wrong.</p>
+    </div>
+
+    <p class="text-sm text-gray-500 mb-5">We've extracted <strong>8 fields</strong> from your CV. Click the pencil icon to edit any field.</p>
+
+    <div class="space-y-3">
+      <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+        <div class="flex items-start justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-sm font-semibold text-gray-800">Full name</span>
+            <span class="inline-flex items-center gap-1 bg-green-100 text-green-700 text-xs font-medium px-2 py-0.5 rounded-full">✓ High confidence</span>
+          </div>
+          <button onclick="toggleEdit(this)" class="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition flex-shrink-0"><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></button>
+        </div>
+        <p class="text-sm text-gray-700 display-val">Ahmad bin Ali</p>
+        <input class="edit-input hidden w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" value="Ahmad bin Ali" />
+        <button onclick="doneEdit(this)" class="done-btn hidden mt-2 text-xs border border-gray-300 rounded-lg px-3 py-1.5 hover:bg-gray-50 transition">Done</button>
+      </div>
+
+      <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+        <div class="flex items-start justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-sm font-semibold text-gray-800">Email address</span>
+            <span class="inline-flex items-center gap-1 bg-green-100 text-green-700 text-xs font-medium px-2 py-0.5 rounded-full">✓ High confidence</span>
+          </div>
+          <button onclick="toggleEdit(this)" class="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition flex-shrink-0"><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></button>
+        </div>
+        <p class="text-sm text-gray-700 display-val">ahmad.ali92@gmail.com</p>
+        <input class="edit-input hidden w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" value="ahmad.ali92@gmail.com" />
+        <button onclick="doneEdit(this)" class="done-btn hidden mt-2 text-xs border border-gray-300 rounded-lg px-3 py-1.5 hover:bg-gray-50 transition">Done</button>
+      </div>
+
+      <div class="bg-white rounded-xl border border-amber-200 shadow-sm p-4">
+        <div class="flex items-start justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-sm font-semibold text-gray-800">Professional headline</span>
+            <span class="inline-flex items-center gap-1 bg-amber-100 text-amber-700 text-xs font-medium px-2 py-0.5 rounded-full">⚠ Check this</span>
+          </div>
+          <button onclick="toggleEdit(this)" class="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition flex-shrink-0"><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></button>
+        </div>
+        <p class="text-sm text-gray-700 display-val">Senior Cashier &amp; Customer Service Specialist</p>
+        <input class="edit-input hidden w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" value="Senior Cashier & Customer Service Specialist" />
+        <button onclick="doneEdit(this)" class="done-btn hidden mt-2 text-xs border border-gray-300 rounded-lg px-3 py-1.5 hover:bg-gray-50 transition">Done</button>
+      </div>
+
+      <div class="bg-white rounded-xl border border-red-200 shadow-sm p-4">
+        <div class="flex items-start justify-between gap-2 mb-2">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-sm font-semibold text-gray-800">Professional summary</span>
+            <span class="inline-flex items-center gap-1 bg-red-100 text-red-700 text-xs font-medium px-2 py-0.5 rounded-full">↓ Low confidence</span>
+          </div>
+          <button onclick="toggleEdit(this)" class="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition flex-shrink-0"><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></button>
+        </div>
+        <p class="text-sm text-gray-500 italic display-val">Not found — please add a summary</p>
+        <textarea class="edit-input hidden w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" rows="4" placeholder="Write a short summary about yourself..."></textarea>
+        <button onclick="doneEdit(this)" class="done-btn hidden mt-2 text-xs border border-gray-300 rounded-lg px-3 py-1.5 hover:bg-gray-50 transition">Done</button>
+      </div>
+
+      <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+        <p class="text-sm font-semibold text-gray-800 mb-2">Work experience <span class="text-gray-400 font-normal">(2 entries extracted)</span></p>
+        <div class="space-y-1.5">
+          <p class="text-sm text-gray-600">Senior Cashier at <span class="font-medium">Mydin Holdings Sdn Bhd</span></p>
+          <p class="text-sm text-gray-600">Sales Assistant at <span class="font-medium">Aeon Co. (M) Sdn Bhd</span></p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+        <p class="text-sm font-semibold text-gray-800 mb-2">Education <span class="text-gray-400 font-normal">(1 entry extracted)</span></p>
+        <p class="text-sm text-gray-600">SPM — <span class="font-medium">SMK Taman Melawati, Kuala Lumpur</span></p>
+      </div>
+
+      <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
+        <p class="text-sm font-semibold text-gray-800 mb-3">Skills extracted <span class="text-gray-400 font-normal">(6)</span></p>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">POS System</span>
+          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Customer Service</span>
+          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Cash Handling</span>
+          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Stock Management</span>
+          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Microsoft Excel</span>
+          <span class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full">Bahasa Melayu</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <a href="06-complete.html" class="flex items-center justify-center gap-2 w-full bg-blue-600 text-white font-semibold py-3.5 rounded-xl hover:bg-blue-700 transition">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Confirm and continue
+      </a>
+    </div>
+  </main>
+
+  <script>
+    function toggleEdit(btn) {
+      const card = btn.closest('.bg-white')
+      card.querySelector('.display-val').classList.add('hidden')
+      card.querySelector('.edit-input').classList.remove('hidden')
+      card.querySelector('.done-btn').classList.remove('hidden')
+      card.querySelector('.edit-input').focus()
+    }
+    function doneEdit(btn) {
+      const card = btn.closest('.bg-white')
+      const display = card.querySelector('.display-val')
+      const input = card.querySelector('.edit-input')
+      if (input.value.trim()) {
+        display.textContent = input.value
+        display.classList.remove('italic', 'text-gray-500')
+        display.classList.add('text-gray-700')
+      }
+      display.classList.remove('hidden')
+      input.classList.add('hidden')
+      btn.classList.add('hidden')
+    }
+  </script>
+
+  <div class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-full px-4 py-2 flex gap-3 shadow-xl">
+    <span class="text-gray-400">Screens:</span>
+    <a href="01-landing.html" class="hover:text-blue-400">Landing</a>
+    <a href="02-register.html" class="hover:text-blue-400">Register</a>
+    <a href="03-login.html" class="hover:text-blue-400">Login</a>
+    <a href="04-upload.html" class="hover:text-blue-400">Upload</a>
+    <a href="05-review.html" class="text-blue-400 font-semibold">Review</a>
+    <a href="06-complete.html" class="hover:text-blue-400">Complete</a>
+    <a href="07-profile.html" class="hover:text-blue-400">Profile</a>
+    <a href="08-activity.html" class="hover:text-blue-400">Activity</a>
+  </div>
+</body>
+</html>
