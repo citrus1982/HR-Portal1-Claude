@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KerjaMY — Complete Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-50 font-sans">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 border-b bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto flex h-16 items-center justify-between px-6">
+      <a href="01-landing.html" class="flex items-center gap-2 text-xl font-bold text-blue-600">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        KerjaMY
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="07-profile.html" class="text-sm text-gray-600 hover:text-gray-900">My Profile</a>
+        <a href="08-activity.html" class="text-sm text-gray-600 hover:text-gray-900">Activity</a>
+        <button class="text-sm text-gray-400 hover:text-gray-600">Sign out</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-2xl mx-auto px-4 py-10">
+
+    <!-- Step indicator -->
+    <div class="mb-8">
+      <div class="flex items-center gap-2 text-sm mb-3 flex-wrap">
+        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold">✓</span>
+        <span class="text-gray-400">Upload CV</span>
+        <svg class="h-4 w-4 text-gray-300 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-green-500 text-white text-xs font-bold">✓</span>
+        <span class="text-gray-400">Review fields</span>
+        <svg class="h-4 w-4 text-gray-300 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600 text-white text-xs font-bold">3</span>
+        <span class="font-semibold text-gray-900">Complete profile</span>
+      </div>
+      <h1 class="text-2xl font-bold text-gray-900">Tell employers what you're looking for</h1>
+      <p class="text-gray-500 mt-1">This information helps employers find you. It takes less than 2 minutes.</p>
+    </div>
+
+    <form class="space-y-6" onsubmit="handleSubmit(event)">
+
+      <!-- Role + Sector -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Target role *</label>
+          <input type="text" value="Cashier / Retail Assistant" placeholder="e.g. Cashier, Driver, Admin"
+            class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Sector *</label>
+          <select class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+            <option>Retail &amp; F&amp;B</option>
+            <option>Manufacturing</option>
+            <option>Logistics &amp; Transport</option>
+            <option>Hospitality &amp; Tourism</option>
+            <option>Construction</option>
+            <option>Healthcare</option>
+            <option>Education</option>
+            <option>Agriculture</option>
+            <option>Security</option>
+            <option>Technology</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Seniority level *</label>
+          <select class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+            <option>Entry-level</option>
+            <option selected>Junior</option>
+            <option>Mid-level</option>
+            <option>Senior</option>
+            <option>Supervisor / Team Lead</option>
+            <option>Manager</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Availability *</label>
+          <select class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+            <option selected>Immediately available</option>
+            <option>Within 1 week</option>
+            <option>Within 2 weeks</option>
+            <option>1 month notice</option>
+            <option>More than 1 month</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-sm font-medium text-gray-700 mb-1">Work authorization *</label>
+          <select class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+            <option selected>Malaysian Citizen / PR</option>
+            <option>Work Permit Holder</option>
+            <option>Require Sponsorship</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Salary range -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Expected monthly salary (RM) *</label>
+        <div class="flex items-center gap-3">
+          <input type="number" value="2000" min="0" step="100"
+            class="w-28 border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <span class="text-gray-400 text-sm">to</span>
+          <input type="number" value="3500" min="0" step="100"
+            class="w-28 border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <span class="text-sm text-gray-400">per month</span>
+        </div>
+      </div>
+
+      <!-- Preferred locations -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          Preferred work locations
+          <span class="text-gray-400 font-normal">(select all that apply)</span>
+        </label>
+        <div class="flex flex-wrap gap-2" id="locationGroup">
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-blue-500 bg-blue-600 text-white transition">Kuala Lumpur</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-blue-500 bg-blue-600 text-white transition">Selangor</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Putrajaya</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Johor</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Penang</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Perak</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Sabah</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Sarawak</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Kedah</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Kelantan</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Terengganu</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Negeri Sembilan</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Melaka</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Pahang</button>
+          <button type="button" onclick="toggle(this)" class="location-btn px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Perlis</button>
+        </div>
+        <p class="text-xs text-gray-400 mt-2" id="locationCount">2 selected</p>
+      </div>
+
+      <!-- Languages -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">
+          Languages spoken
+          <span class="text-gray-400 font-normal">(select all that apply)</span>
+        </label>
+        <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="toggle(this)" class="px-3 py-1.5 rounded-full text-sm border border-blue-500 bg-blue-600 text-white transition">Bahasa Malaysia</button>
+          <button type="button" onclick="toggle(this)" class="px-3 py-1.5 rounded-full text-sm border border-blue-500 bg-blue-600 text-white transition">English</button>
+          <button type="button" onclick="toggle(this)" class="px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Mandarin</button>
+          <button type="button" onclick="toggle(this)" class="px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Tamil</button>
+          <button type="button" onclick="toggle(this)" class="px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Cantonese</button>
+          <button type="button" onclick="toggle(this)" class="px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Iban</button>
+          <button type="button" onclick="toggle(this)" class="px-3 py-1.5 rounded-full text-sm border border-gray-300 bg-white text-gray-700 hover:border-gray-400 transition">Kadazan</button>
+        </div>
+      </div>
+
+      <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3.5 rounded-xl hover:bg-blue-700 transition">
+        Save and view my profile
+      </button>
+    </form>
+  </main>
+
+  <script>
+    function toggle(btn) {
+      const isActive = btn.classList.contains('bg-blue-600')
+      if (isActive) {
+        btn.className = btn.className.replace('border-blue-500 bg-blue-600 text-white', 'border-gray-300 bg-white text-gray-700 hover:border-gray-400')
+      } else {
+        btn.className = btn.className.replace('border-gray-300 bg-white text-gray-700 hover:border-gray-400', 'border-blue-500 bg-blue-600 text-white')
+      }
+      const selected = document.querySelectorAll('#locationGroup .bg-blue-600').length
+      document.getElementById('locationCount').textContent = selected + ' selected'
+    }
+    function handleSubmit(e) {
+      e.preventDefault()
+      window.location.href = '07-profile.html'
+    }
+  </script>
+
+  <!-- Mockup nav -->
+  <div class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-full px-4 py-2 flex gap-3 shadow-xl">
+    <span class="text-gray-400">Screens:</span>
+    <a href="01-landing.html" class="hover:text-blue-400">Landing</a>
+    <a href="02-register.html" class="hover:text-blue-400">Register</a>
+    <a href="03-login.html" class="hover:text-blue-400">Login</a>
+    <a href="04-upload.html" class="hover:text-blue-400">Upload</a>
+    <a href="05-review.html" class="hover:text-blue-400">Review</a>
+    <a href="06-complete.html" class="text-blue-400 font-semibold">Complete</a>
+    <a href="07-profile.html" class="hover:text-blue-400">Profile</a>
+    <a href="08-activity.html" class="hover:text-blue-400">Activity</a>
+  </div>
+</body>
+</html>
