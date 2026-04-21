@@ -1,0 +1,52 @@
+{
+  "app": {
+    "name": "KerjaMY",
+    "tagline": "Malaysia's B40 Hiring Platform"
+  },
+  "nav": {
+    "findWork": "Find Work",
+    "hire": "Hire Talent",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "dashboard": "Dashboard",
+    "getStarted": "Get started free"
+  },
+  "auth": {
+    "register": "Create free account",
+    "login": "Sign in",
+    "email": "Email address",
+    "password": "Password",
+    "name": "Full name",
+    "phone": "Phone number",
+    "alreadyHaveAccount": "Already have an account?",
+    "noAccount": "New here?",
+    "candidateRole": "I'm looking for work",
+    "employerRole": "I'm hiring"
+  },
+  "candidate": {
+    "onboarding": {
+      "uploadTitle": "Upload your CV",
+      "uploadDesc": "We'll read your CV and fill in your profile automatically.",
+      "reviewTitle": "Review extracted information",
+      "reviewDesc": "Check each field — edit anything that looks wrong.",
+      "completeTitle": "Tell employers what you're looking for",
+      "completeDesc": "This helps employers find you. It takes less than 2 minutes."
+    },
+    "profile": {
+      "strength": "Profile strength",
+      "visibility": "Visible to employers",
+      "hidden": "Hidden"
+    }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "continue": "Continue",
+    "back": "Back",
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "required": "Required"
+  }
+}

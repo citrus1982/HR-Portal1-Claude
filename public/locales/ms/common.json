@@ -1,0 +1,52 @@
+{
+  "app": {
+    "name": "KerjaMY",
+    "tagline": "Platform Pengambilan Pekerja B40 Malaysia"
+  },
+  "nav": {
+    "findWork": "Cari Kerja",
+    "hire": "Ambil Pekerja",
+    "signIn": "Log Masuk",
+    "signOut": "Log Keluar",
+    "dashboard": "Papan Pemuka",
+    "getStarted": "Daftar percuma"
+  },
+  "auth": {
+    "register": "Daftar percuma",
+    "login": "Log masuk",
+    "email": "Alamat e-mel",
+    "password": "Kata laluan",
+    "name": "Nama penuh",
+    "phone": "Nombor telefon",
+    "alreadyHaveAccount": "Sudah ada akaun?",
+    "noAccount": "Belum ada akaun?",
+    "candidateRole": "Saya mencari kerja",
+    "employerRole": "Saya ingin mengambil pekerja"
+  },
+  "candidate": {
+    "onboarding": {
+      "uploadTitle": "Muat naik CV anda",
+      "uploadDesc": "Kami akan membaca CV anda dan mengisi profil anda secara automatik.",
+      "reviewTitle": "Semak maklumat yang diekstrak",
+      "reviewDesc": "Periksa setiap medan — edit apa-apa yang kelihatan salah.",
+      "completeTitle": "Beritahu majikan apa yang anda cari",
+      "completeDesc": "Ini membantu majikan mencari anda. Hanya mengambil masa kurang dari 2 minit."
+    },
+    "profile": {
+      "strength": "Kekuatan profil",
+      "visibility": "Kelihatan kepada majikan",
+      "hidden": "Tersembunyi"
+    }
+  },
+  "common": {
+    "save": "Simpan",
+    "cancel": "Batal",
+    "edit": "Edit",
+    "confirm": "Sahkan",
+    "continue": "Teruskan",
+    "back": "Kembali",
+    "loading": "Memuatkan…",
+    "error": "Sesuatu telah berlaku",
+    "required": "Wajib diisi"
+  }
+}
