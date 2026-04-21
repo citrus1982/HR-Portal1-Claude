@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KerjaMY — Activity</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-50 font-sans">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 border-b bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto flex h-16 items-center justify-between px-6">
+      <a href="01-landing.html" class="flex items-center gap-2 text-xl font-bold text-blue-600">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        KerjaMY
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="07-profile.html" class="text-sm text-gray-600 hover:text-gray-900">My Profile</a>
+        <a href="08-activity.html" class="text-sm font-semibold text-blue-600 border-b-2 border-blue-600 pb-0.5">Activity</a>
+        <button class="text-sm text-gray-400 hover:text-gray-600">Sign out</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- Header -->
+    <div>
+      <h1 class="text-2xl font-bold text-gray-900">Activity</h1>
+      <p class="text-gray-500 mt-1">Track who's interested in you and where you are in their hiring process.</p>
+    </div>
+
+    <!-- Summary stats -->
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
+        <svg class="h-5 w-5 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
+        <p class="text-3xl font-bold text-gray-900">3</p>
+        <p class="text-xs text-gray-500 mt-0.5">Profile views</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
+        <svg class="h-5 w-5 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        <p class="text-3xl font-bold text-gray-900">1</p>
+        <p class="text-xs text-gray-500 mt-0.5">Contacts received</p>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-5">
+        <svg class="h-5 w-5 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        <p class="text-3xl font-bold text-gray-900">2</p>
+        <p class="text-xs text-gray-500 mt-0.5">In pipeline</p>
+      </div>
+    </div>
+
+    <!-- Hiring pipeline -->
+    <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+      <div class="flex items-center gap-2 px-5 py-4 border-b border-gray-100">
+        <svg class="h-4 w-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        <h2 class="font-semibold text-gray-800">Hiring pipeline</h2>
+      </div>
+      <div class="divide-y divide-gray-100">
+        <div class="flex items-center justify-between px-5 py-4">
+          <div>
+            <p class="font-medium text-gray-900">99 Speedmart Sdn Bhd</p>
+            <p class="text-xs text-gray-400 mt-0.5">Updated 2 days ago</p>
+          </div>
+          <span class="inline-flex items-center bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full">Interview</span>
+        </div>
+        <div class="flex items-center justify-between px-5 py-4">
+          <div>
+            <p class="font-medium text-gray-900">Giant Hypermarket</p>
+            <p class="text-xs text-gray-400 mt-0.5">Updated 5 days ago</p>
+          </div>
+          <span class="inline-flex items-center bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Shortlisted</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile unlocks -->
+    <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+      <div class="flex items-center gap-2 px-5 py-4 border-b border-gray-100">
+        <svg class="h-4 w-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg>
+        <h2 class="font-semibold text-gray-800">Companies who viewed your profile</h2>
+      </div>
+      <div class="divide-y divide-gray-100">
+        <div class="flex items-center justify-between px-5 py-4">
+          <div>
+            <p class="font-medium text-gray-900">99 Speedmart Sdn Bhd</p>
+            <p class="text-xs text-gray-400 mt-0.5">Retail · Unlocked 3 days ago</p>
+          </div>
+          <span class="inline-flex items-center bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Viewed</span>
+        </div>
+        <div class="flex items-center justify-between px-5 py-4">
+          <div>
+            <p class="font-medium text-gray-900">Giant Hypermarket</p>
+            <p class="text-xs text-gray-400 mt-0.5">Retail · Unlocked 6 days ago</p>
+          </div>
+          <span class="inline-flex items-center bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Viewed</span>
+        </div>
+        <div class="flex items-center justify-between px-5 py-4">
+          <div>
+            <p class="font-medium text-gray-900">Petron Malaysia</p>
+            <p class="text-xs text-gray-400 mt-0.5">Oil &amp; Gas · Unlocked 1 week ago</p>
+          </div>
+          <span class="inline-flex items-center bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Viewed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact requests -->
+    <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+      <div class="flex items-center gap-2 px-5 py-4 border-b border-gray-100">
+        <svg class="h-4 w-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        <h2 class="font-semibold text-gray-800">Contact requests</h2>
+      </div>
+      <div class="divide-y divide-gray-100">
+        <div class="flex items-center justify-between px-5 py-4">
+          <div>
+            <p class="font-medium text-gray-900">99 Speedmart Sdn Bhd</p>
+            <p class="text-xs text-gray-400 mt-0.5">Via WhatsApp · 2 days ago</p>
+          </div>
+          <span class="inline-flex items-center bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">Pending</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty state hint -->
+    <div class="bg-blue-50 border border-blue-100 rounded-2xl p-5 text-center">
+      <p class="text-sm font-medium text-blue-800">Complete your profile to attract more employers</p>
+      <p class="text-xs text-blue-600 mt-1">Your profile score is 72/100. Add a summary to reach 82.</p>
+      <a href="07-profile.html" class="mt-3 inline-block text-sm text-blue-600 font-semibold hover:underline">View my profile →</a>
+    </div>
+
+  </main>
+
+  <!-- Mockup nav -->
+  <div class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-full px-4 py-2 flex gap-3 shadow-xl">
+    <span class="text-gray-400">Screens:</span>
+    <a href="01-landing.html" class="hover:text-blue-400">Landing</a>
+    <a href="02-register.html" class="hover:text-blue-400">Register</a>
+    <a href="03-login.html" class="hover:text-blue-400">Login</a>
+    <a href="04-upload.html" class="hover:text-blue-400">Upload</a>
+    <a href="05-review.html" class="hover:text-blue-400">Review</a>
+    <a href="06-complete.html" class="hover:text-blue-400">Complete</a>
+    <a href="07-profile.html" class="hover:text-blue-400">Profile</a>
+    <a href="08-activity.html" class="text-blue-400 font-semibold">Activity</a>
+  </div>
+</body>
+</html>
