@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KerjaMY — Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 border-b bg-white/95 backdrop-blur shadow-sm">
+    <div class="max-w-6xl mx-auto flex h-16 items-center justify-between px-6">
+      <a href="01-landing.html" class="flex items-center gap-2 text-xl font-bold text-blue-600">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        KerjaMY
+      </a>
+      <div class="flex items-center gap-3">
+        <a href="03-login.html" class="text-sm font-medium text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg hover:bg-gray-100 transition">Sign in</a>
+        <a href="02-register.html" class="text-sm font-medium bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Get started free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
+    <span class="inline-block bg-blue-50 text-blue-700 text-sm font-medium px-4 py-1.5 rounded-full mb-6">🇲🇾 Built for Malaysia</span>
+    <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 max-w-2xl mx-auto leading-tight">
+      Find work or hire talent —<br><span class="text-blue-600">fast and fair</span>
+    </h1>
+    <p class="mt-5 text-xl text-gray-500 max-w-xl mx-auto">
+      KerjaMY connects B40 job seekers with Malaysian SMEs. Upload your CV, get discovered, get hired.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="02-register.html" class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition text-lg shadow-md">
+        I'm looking for work
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="02-register.html" class="inline-flex items-center justify-center gap-2 border-2 border-blue-600 text-blue-600 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition text-lg">
+        I'm hiring talent
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      </a>
+    </div>
+    <p class="mt-5 text-sm text-gray-400">Free to register · No credit card required · Mobile-friendly</p>
+  </section>
+
+  <!-- Stats bar -->
+  <section class="bg-blue-50 py-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+        <div><p class="text-2xl font-bold text-blue-600">B40-first</p><p class="text-sm text-gray-500 mt-1">Designed for B40 Malaysians</p></div>
+        <div><p class="text-2xl font-bold text-blue-600">AI-powered</p><p class="text-sm text-gray-500 mt-1">Instant CV parsing</p></div>
+        <div><p class="text-2xl font-bold text-blue-600">Bilingual</p><p class="text-sm text-gray-500 mt-1">Malay + English</p></div>
+        <div><p class="text-2xl font-bold text-blue-600">SME-ready</p><p class="text-sm text-gray-500 mt-1">Credit-based access</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features candidates -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <span class="inline-block bg-blue-100 text-blue-700 text-sm font-medium px-3 py-1 rounded-full mb-3">For job seekers</span>
+      <h2 class="text-3xl font-bold text-gray-900">Your next job is closer than you think</h2>
+      <p class="mt-2 text-gray-500 max-w-md mx-auto">No polished resume required. Upload what you have and we handle the rest.</p>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-gray-100 bg-white shadow-sm p-8 space-y-4">
+        <div class="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
+          <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 text-lg">AI reads your CV</h3>
+        <p class="text-gray-500 text-sm">Upload once — we fill in your profile. Edit anything that doesn't look right.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-100 bg-white shadow-sm p-8 space-y-4">
+        <div class="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
+          <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 text-lg">Your privacy is protected</h3>
+        <p class="text-gray-500 text-sm">Employers see an anonymized profile first. You decide who gets your contact details.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-100 bg-white shadow-sm p-8 space-y-4">
+        <div class="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
+          <svg class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="font-semibold text-gray-900 text-lg">Instant notifications</h3>
+        <p class="text-gray-500 text-sm">Get notified the moment a company shows interest in your profile.</p>
+      </div>
+    </div>
+    <div class="text-center mt-10">
+      <a href="02-register.html" class="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition">
+        Create my free profile
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Features employers -->
+  <section class="bg-gray-50 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full mb-3">For employers</span>
+        <h2 class="text-3xl font-bold text-gray-900">Find your next hire in minutes</h2>
+        <p class="mt-2 text-gray-500 max-w-md mx-auto">Browse a pool of verified, quality-scored candidates. Only pay to contact who you want.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <div class="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center">
+            <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-lg">Search by skills &amp; location</h3>
+          <p class="text-gray-500 text-sm">Filter candidates by role, location, availability, salary, and language.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <div class="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center">
+            <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-lg">Unlock only who you need</h3>
+          <p class="text-gray-500 text-sm">Credit-based system — pay only for candidates you're genuinely interested in.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 space-y-4">
+          <div class="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center">
+            <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 text-lg">Verified candidates</h3>
+          <p class="text-gray-500 text-sm">Profiles are parsed and quality-scored for completeness before going live.</p>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="02-register.html" class="inline-flex items-center gap-2 border-2 border-gray-700 text-gray-700 font-semibold px-6 py-3 rounded-xl hover:bg-gray-100 transition">
+          Start hiring today
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900">How it works</h2>
+    </div>
+    <div class="max-w-2xl mx-auto space-y-4">
+      <div class="flex gap-5 p-5 rounded-2xl border border-gray-100 bg-white shadow-sm">
+        <div class="h-9 w-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">1</div>
+        <div><p class="font-semibold text-gray-900">Upload your CV or fill in manually</p><p class="text-sm text-gray-500 mt-0.5">AI reads your CV in seconds and builds your profile automatically.</p></div>
+      </div>
+      <div class="flex gap-5 p-5 rounded-2xl border border-gray-100 bg-white shadow-sm">
+        <div class="h-9 w-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">2</div>
+        <div><p class="font-semibold text-gray-900">Confirm your details</p><p class="text-sm text-gray-500 mt-0.5">Review extracted fields, edit anything that's wrong, then set your job preferences.</p></div>
+      </div>
+      <div class="flex gap-5 p-5 rounded-2xl border border-gray-100 bg-white shadow-sm">
+        <div class="h-9 w-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">3</div>
+        <div><p class="font-semibold text-gray-900">Get discovered by employers</p><p class="text-sm text-gray-500 mt-0.5">Employers see an anonymized preview. When they're interested, they unlock your full profile.</p></div>
+      </div>
+      <div class="flex gap-5 p-5 rounded-2xl border border-gray-100 bg-white shadow-sm">
+        <div class="h-9 w-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">4</div>
+        <div><p class="font-semibold text-gray-900">Track everything in one place</p><p class="text-sm text-gray-500 mt-0.5">See who viewed you, track interview stages, and get WhatsApp-friendly contact options.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA bottom -->
+  <section class="bg-blue-600 py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center text-white">
+      <h2 class="text-3xl font-bold">Ready to get started?</h2>
+      <p class="mt-2 text-blue-100 max-w-md mx-auto">Join thousands of Malaysian job seekers and employers on KerjaMY.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="02-register.html" class="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition">Find work now <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        <a href="02-register.html" class="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition">Start hiring <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t py-8">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+      <div class="flex items-center gap-2 font-semibold text-gray-700"><svg class="h-4 w-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>KerjaMY</div>
+      <p>© 2026 KerjaMY. All rights reserved.</p>
+      <div class="flex gap-4"><a href="#" class="hover:text-gray-700">Privacy</a><a href="#" class="hover:text-gray-700">Terms</a><a href="#" class="hover:text-gray-700">Contact</a></div>
+    </div>
+  </footer>
+
+  <!-- Mockup nav -->
+  <div class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs rounded-full px-4 py-2 flex gap-3 shadow-xl">
+    <span class="text-gray-400">Screens:</span>
+    <a href="01-landing.html" class="text-blue-400 font-semibold">Landing</a>
+    <a href="02-register.html" class="hover:text-blue-400">Register</a>
+    <a href="03-login.html" class="hover:text-blue-400">Login</a>
+    <a href="04-upload.html" class="hover:text-blue-400">Upload</a>
+    <a href="05-review.html" class="hover:text-blue-400">Review</a>
+    <a href="06-complete.html" class="hover:text-blue-400">Complete</a>
+    <a href="07-profile.html" class="hover:text-blue-400">Profile</a>
+    <a href="08-activity.html" class="hover:text-blue-400">Activity</a>
+  </div>
+</body>
+</html>
