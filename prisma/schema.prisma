@@ -1,0 +1,347 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Auth
+
+model User {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  password_hash  String
+  role           UserRole
+  phone          String?
+  email_verified Boolean   @default(false)
+  created_at     DateTime  @default(now())
+  updated_at     DateTime  @updatedAt
+
+  candidate    Candidate?
+  employerUser EmployerUser?
+  notifications Notification[]
+
+  @@index([email])
+}
+
+enum UserRole {
+  CANDIDATE
+  EMPLOYER
+  ADMIN
+}
+
+// Candidate
+
+model Candidate {
+  id                String           @id @default(cuid())
+  user_id           String           @unique
+  name              String
+  status            CandidateStatus  @default(ACTIVE)
+  visibility_status VisibilityStatus @default(ACTIVE)
+  created_at        DateTime         @default(now())
+  updated_at        DateTime         @updatedAt
+
+  user              User               @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  profile           CandidateProfile?
+  experiences       Experience[]
+  educations        Education[]
+  skills            CandidateSkill[]
+  resumeFiles       ResumeFile[]
+  parsedFieldAudits ParsedFieldAudit[]
+  resumeVersions    ResumeVersion[]
+  unlocks           CandidateUnlock[]
+  contacts          CandidateContact[]
+  hiringStages      HiringStage[]
+
+  @@index([status, visibility_status])
+}
+
+model CandidateProfile {
+  id                  String    @id @default(cuid())
+  candidate_id        String    @unique
+  headline            String?
+  summary             String?   @db.Text
+  target_role         String?
+  sector              String?
+  seniority_level     String?
+  preferred_locations Json?
+  salary_min          Int?
+  salary_max          Int?
+  availability        String?
+  work_authorization  String?
+  languages           Json?
+  profile_score       Int       @default(0)
+  onboarding_step     String    @default("upload")
+
+  candidate           Candidate @relation(fields: [candidate_id], references: [id], onDelete: Cascade)
+}
+
+model Experience {
+  id           String    @id @default(cuid())
+  candidate_id String
+  company      String
+  title        String
+  start_date   DateTime?
+  end_date     DateTime?
+  is_current   Boolean   @default(false)
+  description  String?   @db.Text
+  industry     String?
+
+  candidate    Candidate @relation(fields: [candidate_id], references: [id], onDelete: Cascade)
+
+  @@index([candidate_id])
+}
+
+model Education {
+  id             String    @id @default(cuid())
+  candidate_id   String
+  institution    String
+  qualification  String?
+  field_of_study String?
+  start_date     DateTime?
+  end_date       DateTime?
+
+  candidate      Candidate @relation(fields: [candidate_id], references: [id], onDelete: Cascade)
+
+  @@index([candidate_id])
+}
+
+model Skill {
+  id             String           @id @default(cuid())
+  name           String           @unique
+  taxonomy_group String?
+
+  candidates     CandidateSkill[]
+}
+
+model CandidateSkill {
+  id           String    @id @default(cuid())
+  candidate_id String
+  skill_id     String
+  proficiency  String?
+  years_used   Int?
+  source       String    @default("manual")
+
+  candidate    Candidate @relation(fields: [candidate_id], references: [id], onDelete: Cascade)
+  skill        Skill     @relation(fields: [skill_id], references: [id])
+
+  @@unique([candidate_id, skill_id])
+  @@index([candidate_id])
+}
+
+model ResumeFile {
+  id               String    @id @default(cuid())
+  candidate_id     String
+  file_url         String
+  original_name    String?
+  mime_type        String?
+  source_type      String    @default("upload")
+  parsed_text_hash String?
+  parse_status     String    @default("pending")
+  uploaded_at      DateTime  @default(now())
+
+  candidate        Candidate @relation(fields: [candidate_id], references: [id], onDelete: Cascade)
+
+  @@index([candidate_id])
+}
+
+model ParsedFieldAudit {
+  id               String    @id @default(cuid())
+  candidate_id     String
+  field_name       String
+  parsed_value     String?   @db.Text
+  confirmed_value  String?   @db.Text
+  confidence_score Float?
+  is_confirmed     Boolean   @default(false)
+  updated_by       String?
+  updated_at       DateTime  @updatedAt
+
+  candidate        Candidate @relation(fields: [candidate_id], references: [id], onDelete: Cascade)
+
+  @@unique([candidate_id, field_name])
+  @@index([candidate_id])
+}
+
+model ResumeVersion {
+  id                     String    @id @default(cuid())
+  candidate_id           String
+  target_role            String?
+  template_id            String    @default("ats-clean")
+  generated_content_json Json?
+  pdf_url                String?
+  created_at             DateTime  @default(now())
+
+  candidate              Candidate @relation(fields: [candidate_id], references: [id], onDelete: Cascade)
+
+  @@index([candidate_id])
+}
+
+enum CandidateStatus {
+  PENDING
+  ACTIVE
+  SUSPENDED
+  DELETED
+}
+
+enum VisibilityStatus {
+  ACTIVE
+  PAUSED
+  HIDDEN
+}
+
+// Employer
+
+model Employer {
+  id                  String             @id @default(cuid())
+  company_name        String
+  registration_no     String?            @unique
+  verification_status VerificationStatus @default(PENDING)
+  industry            String?
+  size                String?
+  website             String?
+  created_at          DateTime           @default(now())
+  updated_at          DateTime           @updatedAt
+
+  users               EmployerUser[]
+  wallet              CreditWallet?
+  transactions        CreditTransaction[]
+  unlocks             CandidateUnlock[]
+  jobPosts            JobPost[]
+  contacts            CandidateContact[]
+  hiringStages        HiringStage[]
+}
+
+model EmployerUser {
+  id          String   @id @default(cuid())
+  user_id     String   @unique
+  employer_id String
+  name        String
+  role        String   @default("member")
+
+  user        User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  employer    Employer @relation(fields: [employer_id], references: [id], onDelete: Cascade)
+
+  @@index([employer_id])
+}
+
+model CreditWallet {
+  id          String    @id @default(cuid())
+  employer_id String    @unique
+  balance     Int       @default(0)
+  expiry_date DateTime?
+  updated_at  DateTime  @updatedAt
+
+  employer    Employer  @relation(fields: [employer_id], references: [id], onDelete: Cascade)
+}
+
+model CreditTransaction {
+  id           String   @id @default(cuid())
+  employer_id  String
+  type         String
+  amount       Int
+  reason       String?
+  candidate_id String?
+  reference_id String?
+  created_at   DateTime @default(now())
+
+  employer     Employer @relation(fields: [employer_id], references: [id])
+
+  @@index([employer_id])
+}
+
+model CandidateUnlock {
+  id           String    @id @default(cuid())
+  employer_id  String
+  candidate_id String
+  credits_used Int
+  unlocked_at  DateTime  @default(now())
+  status       String    @default("active")
+
+  employer     Employer  @relation(fields: [employer_id], references: [id])
+  candidate    Candidate @relation(fields: [candidate_id], references: [id])
+
+  @@unique([employer_id, candidate_id])
+  @@index([employer_id])
+  @@index([candidate_id])
+}
+
+model JobPost {
+  id           String    @id @default(cuid())
+  employer_id  String
+  title        String
+  location     String?
+  salary_range String?
+  description  String?   @db.Text
+  requirements String?   @db.Text
+  status       String    @default("draft")
+  expires_at   DateTime?
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+
+  employer     Employer  @relation(fields: [employer_id], references: [id])
+
+  @@index([employer_id, status])
+}
+
+model CandidateContact {
+  id               String    @id @default(cuid())
+  employer_id      String
+  candidate_id     String
+  channel          String    @default("inplatform")
+  message_status   String    @default("sent")
+  first_contact_at DateTime  @default(now())
+
+  employer         Employer  @relation(fields: [employer_id], references: [id])
+  candidate        Candidate @relation(fields: [candidate_id], references: [id])
+}
+
+model HiringStage {
+  id           String    @id @default(cuid())
+  employer_id  String
+  candidate_id String
+  stage        String    @default("shortlisted")
+  notes        String?
+  updated_at   DateTime  @updatedAt
+
+  employer     Employer  @relation(fields: [employer_id], references: [id])
+  candidate    Candidate @relation(fields: [candidate_id], references: [id])
+
+  @@unique([employer_id, candidate_id])
+  @@index([employer_id, stage])
+}
+
+enum VerificationStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+// Shared
+
+model Notification {
+  id         String    @id @default(cuid())
+  user_id    String
+  type       String
+  payload    Json?
+  read_at    DateTime?
+  created_at DateTime  @default(now())
+
+  user       User      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([user_id, read_at])
+}
+
+model AdminActionLog {
+  id          String   @id @default(cuid())
+  admin_id    String
+  entity_type String
+  entity_id   String
+  action      String
+  metadata    Json?
+  created_at  DateTime @default(now())
+
+  @@index([entity_type, entity_id])
+  @@index([admin_id])
+}
